@@ -828,13 +828,13 @@ static void ImGui_ImplGlfw_UpdateMonitors()
         monitor.MainPos = monitor.WorkPos = ImVec2((float)x, (float)y);
         monitor.MainSize = monitor.WorkSize = ImVec2((float)vid_mode->width, (float)vid_mode->height);
 #if GLFW_HAS_MONITOR_WORK_AREA
-        int w, h;
-        glfwGetMonitorWorkarea(glfw_monitors[n], &x, &y, &w, &h);
-        if (w > 0 && h > 0) // Workaround a small GLFW issue reporting zero on monitor changes: https://github.com/glfw/glfw/pull/1761
-        {
-            monitor.WorkPos = ImVec2((float)x, (float)y);
-            monitor.WorkSize = ImVec2((float)w, (float)h);
-        }
+        //int w, h;
+        //glfwGetMonitorWorkarea(glfw_monitors[n], &x, &y, &w, &h);
+        //if (w > 0 && h > 0) // Workaround a small GLFW issue reporting zero on monitor changes: https://github.com/glfw/glfw/pull/1761
+        //{
+         //   monitor.WorkPos = ImVec2((float)x, (float)y);
+         //   monitor.WorkSize = ImVec2((float)w, (float)h);
+       // }
 #endif
 #if GLFW_HAS_PER_MONITOR_DPI
         // Warning: the validity of monitor DPI information on Windows depends on the application DPI awareness settings, which generally needs to be set in the manifest or at runtime.

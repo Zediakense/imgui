@@ -33,13 +33,22 @@ project "ImGui"
 
 	filter "configurations:Debug"
 		runtime "Debug"
+        if _ACTION == "vs2022" then
+				buildoptions "/MTd"
+		end
 		symbols "on"
 
 	filter "configurations:Release"
 		runtime "Release"
+        if _ACTION == "vs2022" then
+				buildoptions "/MT"
+		end
 		optimize "on"
 
     filter "configurations:Dist"
 		runtime "Release"
+        if _ACTION == "vs2022" then
+				buildoptions "/MT"
+		end
 		optimize "on"
         symbols "off"
